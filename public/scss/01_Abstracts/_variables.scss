@@ -1,0 +1,17 @@
+$columns: 10;
+
+$colors: (
+    "blue": #2559a6,
+    "soft-blue": #326fc8,
+);
+
+@each $color,
+$value in $colors {
+    .color-font-#{$color} {
+        color: $value;
+    }
+
+    .color-bg-#{$color} {
+        background-color: $value;
+    }
+}

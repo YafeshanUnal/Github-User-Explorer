@@ -1,0 +1,189 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    color: #ffffff;
+
+    @include mobile {
+        margin-top: 200px;
+        width: 150%;
+    }
+}
+.result-box {
+    padding-top: 16px;
+
+    border-radius: 4px;
+    & .user-card {
+        height: 50%;
+        width: 100%;
+        border: 1px solid #292929;
+
+        & .row-1 {
+            display: flex;
+            height: 50%;
+            width: 100%;
+
+            & .profile {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 60px;
+                margin-left: 218px;
+
+                img {
+                    border-radius: 50%;
+                    height: 112px;
+                    width: 112px;
+                }
+                .avatar-name {
+                    margin-top: 25px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+                .user-name {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+            & .link {
+                width: 100%;
+                margin-left: 50px;
+                display: flex;
+                gap: 6px;
+                text-decoration: none;
+                color: #e5e5e5;
+            }
+        }
+
+        & .row-2 {
+            display: flex;
+            margin: 50px;
+            gap: 85px;
+            margin-top: 80px;
+
+            .info-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                span {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+                p {
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 18px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .repositories {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 16px;
+
+        .title {
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 91px;
+            border: 1px solid #292929;
+            border-radius: 4px;
+
+            .repo-box {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 25px;
+                justify-content: space-between;
+
+                .box-row-1 {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .name {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #ffffff;
+                    }
+
+                    .stars-number {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #ffffff;
+                    }
+                }
+                .box-row-2 {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    .description {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 18px;
+                        color: #acacac;
+                    }
+
+                    .stars {
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #acacac;
+                    }
+                }
+                &:hover {
+                    background-color: #ffffff;
+                    cursor: pointer;
+                    .name,
+                    .stars-number {
+                        color: #292929 !important;
+                    }
+                }
+            }
+        }
+    }
+    button {
+        margin-top: 25px;
+        width: 100%;
+        height: 44px;
+        background: #0da090;
+        border: 1px solid #72f2e4;
+        border-radius: 4px;
+        &:hover {
+            background-color: #e5e5e5;
+            color: #292929;
+            cursor: pointer;
+        }
+    }
+}

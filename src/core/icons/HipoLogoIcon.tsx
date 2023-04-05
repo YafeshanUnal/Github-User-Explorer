@@ -1,3 +1,4 @@
+import clsx from "clsx";
 export const HipoLogoIcon = ({ className }: IconProps) => (
   <svg
     className={clsx("fill-current", className)}

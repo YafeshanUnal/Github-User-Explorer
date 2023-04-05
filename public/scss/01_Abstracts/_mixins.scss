@@ -1,0 +1,46 @@
+// Mobile Breakpoint
+@mixin mobile {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+// Tablet Breakpoint
+@mixin tablet {
+    @media (min-width: 577px) and (max-width: 992px) {
+        @content;
+    }
+}
+
+// Desktop Breakpoint
+@mixin desktop {
+    @media (min-width: 993px) {
+        @content;
+    }
+}
+
+// Vertical Center Mixin
+@mixin vertical-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Hide Text Mixin
+@mixin hide-text {
+    overflow: hidden;
+    text-indent: 101%;
+    white-space: nowrap;
+}
+
+// Clearfix Mixin
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
