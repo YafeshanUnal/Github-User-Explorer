@@ -5,13 +5,22 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    .no-result {
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
     & .inner-container {
         height: 285px;
         width: 320px;
         display: flex;
         flex-direction: column;
+        text-align: center;
         align-items: center;
-        justify-content: center;
         gap: 10px;
 
         @include mobile {
