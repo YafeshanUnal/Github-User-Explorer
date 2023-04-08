@@ -59,6 +59,7 @@
                 gap: 6px;
                 text-decoration: none;
                 color: #e5e5e5;
+                cursor: pointer;
             }
         }
 
@@ -67,7 +68,6 @@
             margin: 50px;
             gap: 85px;
             margin-top: 80px;
-
             .info-box {
                 display: flex;
                 flex-direction: column;
@@ -97,6 +97,10 @@
         justify-content: center;
         margin-top: 30px;
         gap: 16px;
+        max-height: 300px;
+        max-width: 548px;
+        overflow-y: auto;
+        overflow-x: hidden;
 
         .title {
             font-style: normal;
@@ -109,9 +113,9 @@
             display: flex;
             flex-direction: column;
             width: 100%;
-            height: 91px;
             border: 1px solid #292929;
             border-radius: 4px;
+            height: 121px;
 
             .repo-box {
                 display: flex;
@@ -143,7 +147,7 @@
                 }
                 .box-row-2 {
                     display: flex;
-                    width: 100%;
+                    height: 50px;
                     justify-content: space-between;
 
                     .description {

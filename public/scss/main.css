@@ -94,6 +94,7 @@
   gap: 6px;
   text-decoration: none;
   color: #e5e5e5;
+  cursor: pointer;
 }
 .result-box .user-card .row-2 {
   display: flex;
@@ -126,6 +127,10 @@
   justify-content: center;
   margin-top: 30px;
   gap: 16px;
+  max-height: 300px;
+  max-width: 548px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .result-box .repositories .title {
   font-style: normal;
@@ -137,9 +142,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 91px;
   border: 1px solid #292929;
   border-radius: 4px;
+  height: 121px;
 }
 .result-box .repositories .row .repo-box {
   display: flex;
@@ -169,7 +174,7 @@
 }
 .result-box .repositories .row .repo-box .box-row-2 {
   display: flex;
-  width: 100%;
+  height: 50px;
   justify-content: space-between;
 }
 .result-box .repositories .row .repo-box .box-row-2 .description {
@@ -216,13 +221,20 @@
   align-items: center;
   justify-content: center;
 }
+.outer-container .no-result {
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+}
 .outer-container .inner-container {
   height: 285px;
   width: 320px;
   display: flex;
   flex-direction: column;
+  text-align: center;
   align-items: center;
-  justify-content: center;
   gap: 10px;
 }
 @media (max-width: 576px) {
@@ -246,6 +258,13 @@
   border-radius: 4px;
   padding: 0 10px;
   color: #acacac;
+}
+.outer-container .inner-container .link {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rebeccapurple;
 }
 .outer-container .error-box {
   position: absolute;
@@ -283,4 +302,4 @@ body {
 
 .text-center {
   text-align: center;
-} /*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

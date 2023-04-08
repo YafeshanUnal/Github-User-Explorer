@@ -45,6 +45,20 @@
             padding: 0 10px;
             color: #acacac;
         }
+
+        .link {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #acacac;
+            text-decoration: none;
+
+            :hover {
+                background-color: red;
+                scale: calc(10);
+            }
+        }
     }
 
     .error-box {

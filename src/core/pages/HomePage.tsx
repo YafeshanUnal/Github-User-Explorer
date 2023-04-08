@@ -22,7 +22,7 @@ export const HomePage = () => {
     data: reposInfo,
     isLoading: reposLoading,
     error: reposError,
-    currentData,
+    status,
   } = useGetReposQuery({
     name: username,
   });
@@ -34,7 +34,7 @@ export const HomePage = () => {
     name: username,
   });
 
-  console.log(currentData);
+  console.log("s", status.toString());
 
   useEffect(() => {
     setLoading(reposLoading || userLoading);
@@ -70,9 +70,6 @@ export const HomePage = () => {
     setUsername(username);
   };
 
-  console.log(repos);
-  console.log(repos.length);
-
   return (
     <div className="outer-container">
       {loading && (
@@ -99,21 +96,18 @@ export const HomePage = () => {
           ))}
         </ul>
         <input type="text" placeholder="Type username" onChange={handleSearch} />
-        <Link
-          href="/result"
-          className="link"
-          style={{
-            backgroundColor: "white",
-            color: "black",
-            width: "100px",
-          }}
-        >
+        <Link href={`/result?username=${username}`} className="link">
           Show User
         </Link>
       </div>
       <div className="error-box mobile">
         {error && (
-          <ErrorAlert message="Couldn't load the user profile. Please try again." />
+          <ErrorAlert
+            message={
+              status.toString() &&
+              "API rate limit exceeded.(But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+            }
+          />
         )}
       </div>
     </div>

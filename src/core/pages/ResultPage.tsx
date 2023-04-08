@@ -2,20 +2,51 @@ import Link from "next/link";
 import { LinkIcon } from "../icons/LinkIcon";
 import Image from "next/image";
 import { useAppSelector } from "@/store";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useGetReposQuery, useGetUserQuery } from "../service";
+import { setLoading, setRepos, setUser } from "@/store/slice";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 
 export const ResultPage = () => {
-  const user = useAppSelector((state) => state.repo.user);
-  const repos = useAppSelector((state) => state.repo.repos);
+  const dispatch = useDispatch();
   const loading = useAppSelector((state) => state.repo.loading);
-  console.log(repos);
-  console.log("link", user.html_url);
-
+  const repos = useAppSelector((state) => state.repo.repos);
+  const user = useAppSelector((state) => state.repo.user);
+  const router = useRouter();
+  const { username } = router.query;
+  console.log(username);
+  const {
+    data: reposInfo,
+    isLoading: reposLoading,
+    error: reposError,
+    currentData,
+  } = useGetReposQuery({
+    name: username as string,
+  });
+  const {
+    data: userInfo,
+    isLoading: userLoading,
+    error: userError,
+  } = useGetUserQuery({
+    name: username as string,
+  });
   const [numReposToShow, setNumReposToShow] = useState(2);
+  useEffect(() => {
+    setLoading(reposLoading || userLoading);
+    if (reposInfo && userInfo) {
+      dispatch(setRepos(reposInfo));
+      dispatch(setUser(userInfo));
+    }
+  }, [reposInfo, userInfo, reposLoading, userLoading]);
 
   const handleLoadMore = () => {
     setNumReposToShow(numReposToShow + 2);
   };
+
+  console.log("Error", userError);
+
+  // if user reload the page we redirect to home page
 
   return (
     <div className="container">
@@ -29,10 +60,15 @@ export const ResultPage = () => {
                 <span className="avatar-name">{user.name}</span>
                 <span className="user-name">@{user.login}</span>
               </div>
-              <Link href={user.html_url} className="link">
+              <span
+                onClick={() => {
+                  window.open(user.html_url, "_blank");
+                }}
+                className="link"
+              >
                 View on Github
                 <LinkIcon />
-              </Link>
+              </span>
             </>
             {/* ))} */}
           </div>
