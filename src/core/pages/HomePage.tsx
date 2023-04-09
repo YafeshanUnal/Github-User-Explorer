@@ -43,7 +43,7 @@ export const HomePage = () => {
     } else {
       setError(false);
     }
-  }, [reposInfo, userInfo, reposLoading, userLoading]);
+  }, [reposInfo, userInfo, reposLoading, userLoading, reposError, userError, dispatch]);
 
   // if (isLoading) {
   //   return (
@@ -70,7 +70,7 @@ export const HomePage = () => {
     <div className="outer-container">
       {loading && (
         <div className="">
-          <img
+          <Image
             src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
             alt="loading"
           />

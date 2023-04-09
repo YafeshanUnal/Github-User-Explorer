@@ -38,7 +38,7 @@ export const ResultPage = () => {
       dispatch(setRepos(reposInfo));
       dispatch(setUser(userInfo));
     }
-  }, [reposInfo, userInfo, reposLoading, userLoading]);
+  }, [reposInfo, userInfo, reposLoading, userLoading, dispatch]);
 
   const handleLoadMore = () => {
     setNumReposToShow(numReposToShow + 2);
@@ -56,7 +56,7 @@ export const ResultPage = () => {
             {/* {repos?.map((repo) => ( */}
             <>
               <div className="profile">
-                <img src={user.avatar_url} alt="avatar" width={200} height={200} />
+                <Image src={user.avatar_url} alt="avatar" width={200} height={200} />
                 <span className="avatar-name">{user.name}</span>
                 <span className="user-name">@{user.login}</span>
               </div>
@@ -90,7 +90,7 @@ export const ResultPage = () => {
         </div>
         <div className="repositories">
           <span className="title">Repositories</span>
-          {repos?.slice(0, numReposToShow).map((repo) => (
+          {repos?.slice(0, numReposToShow).map((repo: any) => (
             <>
               <div
                 className="row"
