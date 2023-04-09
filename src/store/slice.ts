@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 
-interface Repo {
+export interface Repo {
   id: string;
   full_name: string;
   html_url: string;
@@ -60,10 +60,10 @@ const repoSlice = createSlice({
       state.repos = action.payload;
       state.loading = false; // set loading to false when repos are fetched
     },
-    setUser: (state, action: PayloadAction<User>) => {
+    setUser: (state: { user: User }, action: PayloadAction<User>) => {
       state.user = action.payload;
     },
-    setLoading: (state, action: PayloadAction<boolean>) => {
+    setLoading: (state: { loading: boolean }, action: PayloadAction<boolean>) => {
       state.loading = action.payload;
     },
   },

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HipoLogoIcon } from "../icons/HipoLogoIcon";
 import ErrorAlert from "../components/ErrorAlert";
 import axios from "axios";
-import { setLoading, setRepos, setUser } from "@/store/slice";
+import { Repo, setLoading, setRepos, setUser } from "@/store/slice";
 import { useAppDispatch, useAppSelector } from "@/store";
 import { useGetReposQuery, useGetUserQuery } from "../service";
 import Link from "next/link";
@@ -70,9 +70,11 @@ export const HomePage = () => {
     <div className="outer-container">
       {loading && (
         <div className="">
-          <Image
+          <img
             src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"
             alt="loading"
+            width={100}
+            height={100}
           />
         </div>
       )}
@@ -85,7 +87,7 @@ export const HomePage = () => {
         <HipoLogoIcon />
         <h1>Github Profile Explorer</h1>
         <ul>
-          {repos?.slice(0, 3).map((repo) => (
+          {repos?.slice(0, 3).map((repo: Repo) => (
             <li key={repo.name}>
               <a href={repo.html_url}>{repo.name}</a>
             </li>

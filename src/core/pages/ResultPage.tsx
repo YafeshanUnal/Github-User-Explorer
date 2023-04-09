@@ -4,14 +4,14 @@ import Image from "next/image";
 import { useAppSelector } from "@/store";
 import { useEffect, useState } from "react";
 import { useGetReposQuery, useGetUserQuery } from "../service";
-import { setLoading, setRepos, setUser } from "@/store/slice";
+import { Repo, setLoading, setRepos, setUser } from "@/store/slice";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
 export const ResultPage = () => {
   const dispatch = useDispatch();
   const loading = useAppSelector((state) => state.repo.loading);
-  const repos = useAppSelector((state) => state.repo.repos);
+  const repos: Repo[] = useAppSelector((state) => state.repo.repos);
   const user = useAppSelector((state) => state.repo.user);
   const router = useRouter();
   const { username } = router.query;
@@ -56,7 +56,7 @@ export const ResultPage = () => {
             {/* {repos?.map((repo) => ( */}
             <>
               <div className="profile">
-                <Image src={user.avatar_url} alt="avatar" width={200} height={200} />
+                <img src={user.avatar_url} alt="avatar" />
                 <span className="avatar-name">{user.name}</span>
                 <span className="user-name">@{user.login}</span>
               </div>
