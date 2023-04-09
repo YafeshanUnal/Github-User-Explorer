@@ -3,7 +3,7 @@ import Image from "next/image";
 import { HipoLogoIcon } from "../icons/HipoLogoIcon";
 import ErrorAlert from "../components/ErrorAlert";
 import axios from "axios";
-import { Repo, setLoading, setRepos, setUser } from "@/store/slice";
+import { setLoading, setRepos, setUser } from "@/store/slice";
 import { useAppDispatch, useAppSelector } from "@/store";
 import { useGetReposQuery, useGetUserQuery } from "../service";
 import Link from "next/link";

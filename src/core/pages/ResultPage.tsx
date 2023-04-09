@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useAppSelector } from "@/store";
 import { useEffect, useState } from "react";
 import { useGetReposQuery, useGetUserQuery } from "../service";
-import { Repo, setLoading, setRepos, setUser } from "@/store/slice";
+import { setLoading, setRepos, setUser } from "@/store/slice";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 
