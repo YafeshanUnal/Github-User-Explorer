@@ -30,8 +30,6 @@ export const HomePage = () => {
     name: username,
   });
 
-  console.log("s", status.toString());
-
   useEffect(() => {
     setLoading(reposLoading || userLoading);
     if (reposInfo && userInfo) {
@@ -44,22 +42,6 @@ export const HomePage = () => {
       setError(false);
     }
   }, [reposInfo, userInfo, reposLoading, userLoading, reposError, userError, dispatch]);
-
-  // if (isLoading) {
-  //   return (
-  //     <div
-  //       style={{
-  //         display: "flex",
-  //         justifyContent: "center",
-  //         alignItems: "center",
-  //         height: "100vh",
-  //         backgroundColor: "white",
-  //       }}
-  //     >
-  //       Loading...
-  //     </div>
-  //   );
-  // }
 
   const handleSearch = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const username = e.target.value;

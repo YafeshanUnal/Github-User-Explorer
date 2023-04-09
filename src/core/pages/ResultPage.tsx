@@ -44,33 +44,25 @@ export const ResultPage = () => {
     setNumReposToShow(numReposToShow + 2);
   };
 
-  console.log("Error", userError);
-
-  // if user reload the page we redirect to home page
-
   return (
     <div className="container">
       <div className="result-box">
         <div className="user-card">
           <div className="row-1">
-            {/* {repos?.map((repo) => ( */}
-            <>
-              <div className="profile">
-                <img src={user.avatar_url} alt="avatar" />
-                <span className="avatar-name">{user.name}</span>
-                <span className="user-name">@{user.login}</span>
-              </div>
-              <span
-                onClick={() => {
-                  window.open(user.html_url, "_blank");
-                }}
-                className="link"
-              >
-                View on Github
-                <LinkIcon />
-              </span>
-            </>
-            {/* ))} */}
+            <div className="profile">
+              <img src={user.avatar_url} alt="avatar" />
+              <span className="avatar-name">{user.name}</span>
+              <span className="user-name">@{user.login}</span>
+            </div>
+            <span
+              onClick={() => {
+                window.open(user.html_url, "_blank");
+              }}
+              className="link"
+            >
+              View on Github
+              <LinkIcon />
+            </span>
           </div>
 
           <div className="row-2">
@@ -114,18 +106,6 @@ export const ResultPage = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="row">
-                <div className="repo-box">
-                  <div className="box-row-1">
-                    <span className="name">{repo.name}</span>
-                    <span className="stars-number">10.906</span>
-                  </div>
-                  <div className="box-row-2">
-                    <span className="description">This repo is for demo purposes.</span>
-                    <span className="stars">Stars</span>
-                  </div>
-                </div>
-              </div> */}
             </>
           ))}
         </div>
