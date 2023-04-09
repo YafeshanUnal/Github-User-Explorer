@@ -8,10 +8,6 @@ import { useAppDispatch, useAppSelector } from "@/store";
 import { useGetReposQuery, useGetUserQuery } from "../service";
 import Link from "next/link";
 import Popup from "../components/Popup";
-interface Repo {
-  name: string;
-  html_url: string;
-}
 export const HomePage = () => {
   const [username, setUsername] = useState("");
   const dispatch = useAppDispatch();
