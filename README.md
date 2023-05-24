@@ -13,7 +13,7 @@ This is a simple app that allows you to search for a Github user and see their p
 Clone the repository and install the dependencies:
 
 ```
-    git clone https://github.com/YafeshanUnal/hipo-intern-challenge.git
+    git clone https://github.com/YafeshanUnal/Github-User-Explorer.git
     cd Github-User-Explorer
 
     npm install
