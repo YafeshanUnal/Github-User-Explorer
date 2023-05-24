@@ -14,7 +14,7 @@ Clone the repository and install the dependencies:
 
 ```
     git clone https://github.com/YafeshanUnal/hipo-intern-challenge.git
-    cd hipo-intern-challenge
+    cd Github-User-Explorer
 
     npm install
     # or
